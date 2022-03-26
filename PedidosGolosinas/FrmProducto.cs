@@ -110,8 +110,6 @@ namespace PedidosGolosinas
                 producto.Precio = Convert.ToDecimal(PrecioTextBox.Text);
                 producto.Existencia = Convert.ToInt32(ExistenciaTextBox.Text);
 
-               
-
                 if (operacion == "Nuevo")
                 {
                     bool inserto = productosDA.InsertarProducto(producto);
@@ -135,6 +133,8 @@ namespace PedidosGolosinas
                         MessageBox.Show("Producto Modificado");
                     }
                 }
+
+
             }
             catch (Exception)
             {
@@ -148,6 +148,49 @@ namespace PedidosGolosinas
         private void ListarProductos()
         {
             ProductosDataGridView.DataSource = productosDA.ListarProductos();
+        }
+
+        private void EliminarButton_Click(object sender, EventArgs e)
+        {
+            if (ProductosDataGridView.SelectedRows.Count > 0)
+            {
+                bool elimino = productosDA.EliminarProducto(ProductosDataGridView.CurrentRow.Cells["Codigo"].Value.ToString());
+
+                if (elimino)
+                {
+                    ListarProductos();
+                    MessageBox.Show("Producto Eliminado", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo eliminar el Producto", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar un Producto", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void ExistenciaTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void PrecioTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+                errorProvider1.SetError(PrecioTextBox, "Ingrese un caracter numerico");
+            }
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
         }
     }
 

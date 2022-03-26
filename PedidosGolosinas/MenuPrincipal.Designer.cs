@@ -65,7 +65,7 @@
             this.ribbonControlAdv1.QuickPanelImageLayout = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ribbonControlAdv1.RibbonHeaderImage = Syncfusion.Windows.Forms.Tools.RibbonHeaderImage.None;
             this.ribbonControlAdv1.RibbonStyle = Syncfusion.Windows.Forms.Tools.RibbonStyle.Office2016;
-            this.ribbonControlAdv1.SelectedTab = this.toolStripTabItem1;
+            this.ribbonControlAdv1.SelectedTab = this.toolStripTabItem2;
             this.ribbonControlAdv1.ShowRibbonDisplayOptionButton = true;
             this.ribbonControlAdv1.Size = new System.Drawing.Size(808, 114);
             this.ribbonControlAdv1.SystemText.QuickAccessDialogDropDownName = "Start menu";
@@ -161,6 +161,7 @@
             this.ListaDePedidosToolStripButton.Name = "ListaDePedidosToolStripButton";
             this.ListaDePedidosToolStripButton.Size = new System.Drawing.Size(126, 31);
             this.ListaDePedidosToolStripButton.Text = "Lista de Pedidos";
+            this.ListaDePedidosToolStripButton.Click += new System.EventHandler(this.ListaDePedidosToolStripButton_Click);
             // 
             // MenuPrincipal
             // 

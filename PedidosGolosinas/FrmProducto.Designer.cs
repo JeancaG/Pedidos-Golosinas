@@ -53,7 +53,7 @@
             this.ProductosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ProductosDataGridView.Location = new System.Drawing.Point(327, 12);
             this.ProductosDataGridView.Name = "ProductosDataGridView";
-            this.ProductosDataGridView.Size = new System.Drawing.Size(632, 309);
+            this.ProductosDataGridView.Size = new System.Drawing.Size(473, 309);
             this.ProductosDataGridView.TabIndex = 37;
             // 
             // CancelarButton
@@ -74,6 +74,7 @@
             this.EliminarButton.TabIndex = 35;
             this.EliminarButton.Text = "Eliminar";
             this.EliminarButton.UseVisualStyleBackColor = true;
+            this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
             // 
             // GuardarButton
             // 
@@ -113,6 +114,7 @@
             this.ExistenciaTextBox.Name = "ExistenciaTextBox";
             this.ExistenciaTextBox.Size = new System.Drawing.Size(197, 20);
             this.ExistenciaTextBox.TabIndex = 29;
+            this.ExistenciaTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ExistenciaTextBox_KeyPress);
             // 
             // label4
             // 
@@ -130,6 +132,7 @@
             this.PrecioTextBox.Name = "PrecioTextBox";
             this.PrecioTextBox.Size = new System.Drawing.Size(197, 20);
             this.PrecioTextBox.TabIndex = 27;
+            this.PrecioTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PrecioTextBox_KeyPress);
             // 
             // label3
             // 
@@ -183,7 +186,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(971, 336);
+            this.ClientSize = new System.Drawing.Size(821, 336);
             this.Controls.Add(this.ProductosDataGridView);
             this.Controls.Add(this.CancelarButton);
             this.Controls.Add(this.EliminarButton);

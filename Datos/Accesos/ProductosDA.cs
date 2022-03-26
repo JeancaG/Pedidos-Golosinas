@@ -1,11 +1,7 @@
 ﻿using Datos.Entidades;
 using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Datos.Accesos
 {
@@ -119,12 +115,12 @@ namespace Datos.Accesos
             return elimino;
         }
 
-      /*  public Producto GetProductoPorCodigo(string codigo)
+        public Producto GetProductoPorCodigo(string codigo)
         {
             Producto producto = new Producto();
             try
             {
-                string sql = "Select * from producto WHERE Codigo = @Codigo;";
+                string sql = "Select * from Producto WHERE Codigo = @Codigo;";
 
                 conn = new MySqlConnection(cadena);
                 conn.Open();
@@ -138,7 +134,7 @@ namespace Datos.Accesos
                     producto.Codigo = reader["Codigo"].ToString();
                     producto.Descripcion = reader["Descripcion"].ToString();
                     producto.Precio = Convert.ToDecimal(reader["Precio"]);
-                    producto.Existencia = Convert.ToInt32(reader["Descripcion"].ToString());
+                    producto.Existencia = Convert.ToInt32(reader["Existencia"].ToString());
              
                 }
 
@@ -148,6 +144,6 @@ namespace Datos.Accesos
             {
             }
             return producto;
-        }*/
+        }
     }
 }
